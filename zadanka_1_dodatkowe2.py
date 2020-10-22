@@ -36,7 +36,8 @@ import resource
 # MEMORY USAGE
 # ^ Pod koniec programu zużywa on 54364 kilobytes (na linux VM)
 # Przy 10**7 licz zużywa  - 177856 kilobytes
-# A gdy obniżyłem Ram do 172000 kilobytes zeby wymusic brak to zajelo tylko 87244 kilobytes
+# A gdy obniżyłem Ram do 172000 kilobytes zeby wymusic brak to zajelo tylko 87244 kilobytes.
+# Próbowałem Ram obnizyc do 165000 kilobytes ale linux nie odpalal sie wtedy.
 
 random_numbers = []
 time_generating = 0.00
