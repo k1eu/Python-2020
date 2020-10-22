@@ -1,7 +1,12 @@
 from random import randint
 from datetime import datetime
+import resource
+
+#WINDOWS
 
 # GENEROWANIE 10**5 liczb losowych z przedzialu 1..10**4
+# CZASY PODANE W SEKUNDACH
+
 # DLA 10**5 liczb:
 # Generowanie 0.14
 # Dodawanie liczb 0.09
@@ -14,7 +19,24 @@ from datetime import datetime
 # Razem z petla 4.20
 # Szukanie unikalnych 51.23
 
-# Brak jeszcze danych z VM'a
+# Debian 10
+
+# DLA 10**5 liczb:
+# Generowanie 0.13
+# Dodawanie liczb 0.06
+# Razem z petla  0.31
+# Szukanie unikalnych 3.45
+
+# Dla 10**6 liczb:
+# Generowanie 1.32
+# Dodawanie 0.62
+# Razem z petla 3.21
+# Szukanie unikalnych 36.86
+
+# MEMORY USAGE
+# ^ Pod koniec programu zużywa on 54364 kilobytes (na linux VM)
+# Przy 10**7 licz zużywa  - 177856 kilobytes
+# A gdy obniżyłem Ram do 172000 kilobytes zeby wymusic brak to zajelo tylko 87244 kilobytes
 
 random_numbers = []
 time_generating = 0.00
@@ -59,6 +81,8 @@ timestamp8 = datetime.now().timestamp()
 print(f'\nTyle jest liczb unikalnych: {unikalne} / {sprawdzone}\n'
       f'Sprawdzanie unikalności zajęło tyle czasu: {(timestamp8-timestamp7):.2f}')
 
+usage = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+print(f'{usage} kilobytes')
 
 # GENEROWANIE 10**6 LICZB LOSOWYCH Z PRZEDZIALU 1..10**4
 
@@ -104,3 +128,6 @@ for i in range(len(random_numbers2)):
 timestamp82 = datetime.now().timestamp()
 print(f'\nTyle jest liczb unikalnych: {unikalne2} / {sprawdzone2}\n'
       f'Sprawdzanie unikalności zajęło tyle czasu: {(timestamp82-timestamp72):.2f}')
+
+usage = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+print(f'{usage} kilobytes')
