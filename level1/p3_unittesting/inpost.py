@@ -50,6 +50,8 @@ class TestSum(unittest.TestCase):
 
     def test_7(self):
         self.assertEqual(inpost([2, 4, 8, 8, 2], [5, 3, 5, 6]), False, 'Tu chyba nie ma szans...')
+    def test_8(self):
+        self.assertEqual(inpost([1]*20000, [1]*20000), True, 'Powinno przejsc, liczenie ')
 
 
 if __name__ == '__main__':

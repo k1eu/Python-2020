@@ -3,12 +3,23 @@ import unittest
 w = [4,6,9,1,10,5,8,30,4,2,1]
 
 def ile_w_30min(tab):
-    najwiekszy = tab[1] + tab[2] + tab[3] #dla uproszczenia zakladamy ze ma min 30 min
+    najwiekszy = sum(tab[:3]) #dla uproszczenia zakladamy ze ma min 30 min
     for i in range(len(tab)):
         if i < len(tab)-3:
             temp = tab[i]+tab[i+1]+tab[i+2]
             najwiekszy = temp if temp > najwiekszy else najwiekszy
     return najwiekszy
+
+""" ROZWIZAZNIE ULEPSZONE
+def ile_w_30min(klienci):
+    window = sum(klienci[:3])
+    result = window
+    for i in range(3, len(klienci)):
+        window += klienci[i]
+        window -= klienci[i - 3]
+        result = max(result, window)
+    return result
+"""
 
 class TestSum(unittest.TestCase):
 
