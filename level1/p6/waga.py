@@ -12,6 +12,8 @@ Monety trzeba podzielić na dwie grupy o równej (łącznej) wadze. Ocenić, czy
 [Uwaga: monet jest nie więcej niż 20.]
 """
 
+# wersja 1
+
 
 def waga(coins: List[int]):
     suma = sum(coins)
@@ -27,6 +29,7 @@ def waga(coins: List[int]):
             if sum(lewo) == sum(prawo):
                 return True
         return False
+
 
 
 class TestSum(unittest.TestCase):
@@ -48,7 +51,6 @@ class TestSum(unittest.TestCase):
 
     def test_6(self):
         self.assertEqual(waga([2, 2, 3, 4, 5]), False, '')  # True w wersji 2
-
 
 if __name__ == '__main__':
     unittest.main()
