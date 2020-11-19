@@ -27,9 +27,12 @@ def waga(coins: List[int]):
             del lewo[-1]
             prawo.append(x)
             if sum(lewo) == sum(prawo):
+                print(lewo)
+                print(prawo)
                 return True
+        print(lewo)
+        print(prawo)
         return False
-
 
 
 class TestSum(unittest.TestCase):
@@ -51,6 +54,7 @@ class TestSum(unittest.TestCase):
 
     def test_6(self):
         self.assertEqual(waga([2, 2, 3, 4, 5]), False, '')  # True w wersji 2
+
 
 if __name__ == '__main__':
     unittest.main()

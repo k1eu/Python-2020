@@ -12,29 +12,26 @@ Sprawdzić czy `vir` zawiera mutacje (tak/nie).
 """
 
 # TODO DOKONCZYC BO NIE DZIALA
+
+
 def wirus(vir: str, genes: List[str]):
-    conti = True
-    while len(vir) > 0:
-        for i in genes:
-            if vir.startswith(i):
-                l = len(i)
-                vir = vir[l:]
-                if len(vir) < 1:
-                    return False
-
-
-
-"""
-lenvir 3
-3
-    G
-    1
-    GA
-    
-
-"""
-
-
+    i = 0
+    while i < len(genes):
+        gene = genes[i]
+        print(i, gene)
+        if vir.startswith((gene)):
+            l = len(gene)
+            print(vir)
+            vir = vir[l:]
+            print(vir)
+            i = 0
+        else:
+            i += 1
+    print(vir)
+    if vir == '':
+        return False
+    else:
+        return True
 
 
 class TestSum(unittest.TestCase):
