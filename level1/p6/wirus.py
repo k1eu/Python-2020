@@ -11,15 +11,13 @@ Sprawdzić czy `vir` zawiera mutacje (tak/nie).
 [Uwaga: Elementy tablicy `genes` nie zawierają wspólnych liter.]
 """
 
-# TODO DOKONCZYC BO NIE DZIALA
-
 
 def wirus(vir: str, genes: List[str]):
     i = 0
     while i < len(genes):
         gene = genes[i]
-        print(i, gene)
-        if vir.startswith((gene)):
+        print(i, gene,'-------')
+        if vir.startswith(gene):
             l = len(gene)
             print(vir)
             vir = vir[l:]
@@ -27,7 +25,9 @@ def wirus(vir: str, genes: List[str]):
             i = 0
         else:
             i += 1
-    print(vir)
+        if vir == '':
+            return False
+    print(vir, ' --- test czy puste')
     if vir == '':
         return False
     else:
