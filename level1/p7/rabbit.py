@@ -9,6 +9,9 @@ do nory od lewej strony (pozycja 0) i ma przejść do strony prawej (pozycja n-1
 - może przechodzić wyłącznie do pól sąsiadujących z tym w którym się znajduje idąć
 w prawo, górę lub dół (nie "po skosie")
 Ocenić, czy królik przejdzie przez całą norę bez problemów.  
+
+.......x
+.........x
 """
 
 

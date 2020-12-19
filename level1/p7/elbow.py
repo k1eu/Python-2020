@@ -11,16 +11,16 @@ Policzyć ile konfliktów powstanie w danym rzędzie.
 """
 
 
-def elbows(row):
+def elbows2(row):
     conflict_app = 0
     lngth = len(row)
-    for i in range(lngth):
-        if i < lngth-1:
-            if row[i] + row[i+1] == 'RL':
-                conflict_app += 1
+    for i in range(lngth-1):
+        if row[i] + row[i+1] == 'RL':
+            conflict_app += 1
     return conflict_app
 
-
+def elbows(row):
+    return row.count("RL")
 class TestSum(unittest.TestCase):
 
     def test_1(self):
