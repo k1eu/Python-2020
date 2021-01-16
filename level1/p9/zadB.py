@@ -30,12 +30,12 @@ visual_style = {}
 
 node_colours = []
 weights = [1, 2, 2, 3, 3]
-for each in weights:
-    if each == 1:
+for i in weights:
+    if i == 1:
         node_colours.append("red")
-    elif each == 2:
+    elif i == 2:
         node_colours.append("green")
-    elif each == 3:
+    elif i == 3:
         node_colours.append("blue")
 
 out_name = 'tree.png'  # Set bbox and margin
